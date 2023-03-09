@@ -11,5 +11,7 @@ const app = express();
 // routes
 app.get("/", (req, res) => res.send("The server works!"));
 
+app.get("*", (req, res) => res.status(404).send("Page not found"));
+
 // start the server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
